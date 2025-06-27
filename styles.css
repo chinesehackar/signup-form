@@ -1,6 +1,7 @@
 @import url("montserrat-webfont/style.css");
 
 :root {
+    --font-extra-large: 4rem;
     --font-large: 1.25rem;
     --font-medium: 1rem;
     --font-small: 0.75rem;
@@ -70,7 +71,44 @@ body {
 }
 
 .image-section {
+    position: relative;
     flex: 1 0 40vw;
+}
+
+.logo-container {
+    padding: 2rem 1rem;
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-section div p {
+    font-size: var(--font-extra-large);
+    font-family: 'Montserrat Bold';
+    color: white;
+}
+
+.logo-image {
+    width: min(140px, 80%);
+}
+
+.main-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.credits {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 1rem;
+    color: white;
 }
 
 .form-section {
@@ -122,10 +160,4 @@ button {
 
 label {
     font-size: var(--font-small);
-}
-
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
