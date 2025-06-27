@@ -12,6 +12,9 @@
     --color-accent-light: rgb(151, 39, 237);
     --color-accent-lighter: rgb(226, 188, 255);
     --color-light: rgb(200, 200, 200);
+
+    --error: rgb(255, 44, 44);
+    --success: rgb(111, 255, 83);
 }
 
 /* CSS Reset */
@@ -57,7 +60,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* 9. Improve line wrapping */
 p {
-  text-wrap:
+  text-wrap: pretty;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,7 +101,7 @@ body {
 .image-section div p {
     font-size: var(--font-extra-large);
     font-family: 'Montserrat Bold';
-    color: white;
+    color: var(--color-secondary);
 }
 
 .logo-image {
@@ -115,7 +118,7 @@ body {
     position: absolute;
     width: 100%;
     text-align: center;
-    bottom: 1rem;
+    bottom: 1.5rem;
     color: var(--color-secondary);
 }
 
@@ -148,6 +151,7 @@ a:visited {
     font-family: 'Montserrat Medium';
     margin-bottom: 1rem;
     width: 100%;
+    line-height: 1.7;
 }
 
 .fields {
@@ -168,8 +172,10 @@ h2, .row {
 .row > div {
     display: flex;
     flex-direction: column;
+    align-items: start;
     flex-wrap: wrap;
-    width: max(120px, 33%);
+    width: 36%;
+    min-width: 200px;
 }
 
 .fields {
@@ -178,11 +184,12 @@ h2, .row {
 
 input {
     background: transparent;
-    color: white;
+    color: var(--color-secondary);
     border: 1px solid var(--color-secondary);
     height: 2.25rem;
     width: 100%;
     padding: 0 0.25rem;
+    border-radius: 0.25rem;
 }
 
 button {
@@ -201,4 +208,28 @@ button:hover {
 
 label {
     font-size: var(--font-small);
+    letter-spacing: 0.5px;
 }
+
+span {
+    color: var(--color-light);
+}
+
+.row p {
+    font-size: var(--font-small);
+    line-height: 1rem;
+    margin: 0.25rem 0 0 0;
+}
+
+input:focus {
+    outline-color: var(--color-accent-light);
+}
+
+input:user-valid{
+    border-color: var(--success);
+}
+
+input:user-invalid {
+    border-color: var(--error);
+}
+
