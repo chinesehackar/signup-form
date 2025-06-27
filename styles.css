@@ -23,6 +23,7 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat Medium', system-ui, sans-serif;
 }
 
 /* 6. Improve media defaults */
@@ -54,4 +55,27 @@ h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: peachpuff;
+}
+
+.image-section {
+    flex: 1 0 40vw;
+}
+
+.form-section {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
