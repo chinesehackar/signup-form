@@ -5,6 +5,13 @@
     --font-large: 1.25rem;
     --font-medium: 1rem;
     --font-small: 0.75rem;
+
+    --color-primary: rgb(21, 18, 38);
+    --color-secondary: rgb(251, 251, 251);
+    --color-accent: rgb(50, 30, 185);
+    --color-accent-light: rgb(151, 39, 237);
+    --color--accent-lighter: rgb(226, 188, 255);
+    --color-light: rgb(200, 200, 200);
 }
 
 /* CSS Reset */
@@ -31,6 +38,7 @@ body {
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   font-family: 'Montserrat Regular', system-ui, sans-serif;
+  color: var(--color-secondary);
 }
 
 /* 6. Improve media defaults */
@@ -67,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
     height: 100vh;
     display: flex;
-    background-color: peachpuff;
+    background: linear-gradient(315deg, var(--color-accent), var(--color-primary) 40%);
 }
 
 .image-section {
@@ -80,7 +88,6 @@ body {
     position: absolute;
     top: 4rem;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +115,15 @@ body {
     width: 100%;
     text-align: center;
     bottom: 1rem;
-    color: white;
+    color: var(--color-secondary);
+}
+
+a {
+    color: var(--color-secondary);
+}
+
+a:visited {
+    color: var(--color--accent-lighter);
 }
 
 .form-section {
@@ -130,7 +145,7 @@ body {
 }
 
 .fields {
-    background-color: yellowgreen;
+    background-color: rgba(206, 115, 255, 0.1);
     padding: 2rem;
 }
 
@@ -141,6 +156,7 @@ h2, .row {
 .row {
     display: flex;
     gap: 6rem;
+    margin-bottom: 1rem;
 }
 
 .row > div {
@@ -153,9 +169,12 @@ h2, .row {
 }
 
 button {
-    background-color: skyblue;
-    padding: 0.5rem 1rem;
+    background-color: var(--color-accent-light);
+    color: var(--color-secondary);
+    padding: 0.5rem 1.5rem;
     margin-bottom: 1.5rem;
+    border: transparent;
+    border-radius: 0.25rem;
 }
 
 label {
