@@ -10,7 +10,7 @@
     --color-secondary: rgb(251, 251, 251);
     --color-accent: rgb(50, 30, 185);
     --color-accent-light: rgb(151, 39, 237);
-    --color--accent-lighter: rgb(226, 188, 255);
+    --color-accent-lighter: rgb(226, 188, 255);
     --color-light: rgb(200, 200, 200);
 }
 
@@ -37,8 +37,6 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  font-family: 'Montserrat Regular', system-ui, sans-serif;
-  color: var(--color-secondary);
 }
 
 /* 6. Improve media defaults */
@@ -59,8 +57,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* 9. Improve line wrapping */
 p {
-  text-wrap: pretty;
+  text-wrap:
 }
+
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
@@ -73,6 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+    font-family: 'Montserrat Regular', system-ui, sans-serif;
+    color: var(--color-secondary);
     height: 100vh;
     display: flex;
     background: linear-gradient(315deg, var(--color-accent), var(--color-primary) 40%);
@@ -123,7 +124,7 @@ a {
 }
 
 a:visited {
-    color: var(--color--accent-lighter);
+    color: var(--color-accent-lighter);
 }
 
 .form-section {
@@ -137,11 +138,16 @@ a:visited {
     margin-left: 2rem;
 }
 
+.top-content-wrapper {
+    width: min(65ch, 90%);
+    white-space: wrap;
+}
+
 .top-content {
     font-size: var(--font-large);
     font-family: 'Montserrat Medium';
     margin-bottom: 1rem;
-    width: 48ch;
+    width: 100%;
 }
 
 .fields {
@@ -155,17 +161,28 @@ h2, .row {
 
 .row {
     display: flex;
-    gap: 6rem;
+    gap: calc(6vw - 1rem);
     margin-bottom: 1rem;
 }
 
 .row > div {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    width: max(120px, 33%);
 }
 
 .fields {
     margin: 2rem 0 1.5rem 0;
+}
+
+input {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--color-secondary);
+    height: 2.25rem;
+    width: 100%;
+    padding: 0 0.25rem;
 }
 
 button {
@@ -175,6 +192,11 @@ button {
     margin-bottom: 1.5rem;
     border: transparent;
     border-radius: 0.25rem;
+}
+
+button:hover {
+    background-color: var(--color-accent-lighter);
+    color: var(--color-primary);
 }
 
 label {
